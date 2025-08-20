@@ -14,13 +14,14 @@ public class DBContext : DbContext
     }
 
     public DbSet<ADM> ADMs { get; set; } = default!;
+    public DbSet<Veiculo> Veiculos { get; set; } = default!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<ADM>().HasData(
             new ADM { Id = 1, Email = "adm@teste.com", Senha = "123456", Perfil = "Admin" }
         );
-            
+
     }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
